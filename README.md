@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🤖 Expert Computer Science FAQ Chatbot
 
 **An intelligent, domain-restricted, offline-capable FAQ assistant designed exclusively for Computer Science students, faculty, and developers.**
