@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+# Register your models here.................
 from django.contrib import admin
 from django.core.management import call_command
 from .models import Category, FAQ, Conversation, Message, UnansweredQuery

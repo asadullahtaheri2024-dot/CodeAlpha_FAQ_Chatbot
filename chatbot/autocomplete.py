@@ -1,4 +1,8 @@
-
+"""
+Fast autocomplete suggestions for the chat input.
+Uses a pre-built in-memory index for instant lookups (< 5ms).
+100% offline — no external APIs.
+"""
 import re
 import threading
 from functools import lru_cache
