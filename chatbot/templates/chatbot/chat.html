@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expert FAQ Assistant</title>
+  <link rel="stylesheet" href="{% static 'chatbot/css/chat.css' %}" />
+  <style>
+ 
+  @media (max-width: 768px) {
+    body { background-attachment: scroll; }
+  }
+</style>
+</head>
+<body>
+  <div class="chat-shell">
+    <header class="chat-header">
+      <div class="brand">
+       <div class="avatar"></div>
+        <div>
+          <div class="title">Computer Science Fauckty Assistant</div>
+          <div class="status"><span class="dot"></span>  Offline-ready</div>
+        </div>
+      </div>
+      <button id="resetBtn" class="icon-btn" title="New conversation">⟳</button>
+    </header>
+
+    <div id="messages" class="messages" aria-live="polite">
+      <div class="msg bot">
+        <div class="bubble">
+          👋 Hi! I'm your FAQ assistant. Ask me anything, or pick a topic below.
+        </div>
+      </div>
+
+      {% if popular %}
+      <div class="chips" id="initialChips">
+        {% for faq in popular %}
+          <button class="chip" data-faq="{{ faq.id }}">{{ faq.question }}</button>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- ── Composer with autocomplete dropdown ── -->
+    <div class="composer-wrap">
+      <div id="suggestions" class="suggestions" hidden></div>
+
+      <form id="chatForm" class="composer" autocomplete="off">
+        <input id="input" type="text" placeholder="Type your question..."
+               maxlength="500" required autocomplete="off" />
+        <button type="submit" id="sendBtn" aria-label="Send">➤</button>
+      </form>
+    </div>
+  </div>
+
+  <script>window.CSRF_TOKEN = "{{ csrf_token }}";</script>
+  <script src="{% static 'chatbot/js/chat.js' %}"></script>
+</body>
+</html>
