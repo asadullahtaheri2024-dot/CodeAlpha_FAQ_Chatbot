@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🤖 Expert Computer Science FAQ Chatbot
 
 **An intelligent, domain-restricted, offline-capable FAQ assistant designed exclusively for Computer Science students, faculty, and developers.**
@@ -193,3 +194,4 @@ chatbot/                            # Main project root
         ├── css/chat.css            # Styling & animations
         ├── js/chat.js              # Chat logic & fetch API calls
         ├── images/                 # Backgrounds & avatars
+=======
